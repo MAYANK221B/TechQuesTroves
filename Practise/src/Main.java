@@ -11,5 +11,9 @@ public class Main {
         arraysPrac.findMissingNumber();
         arraysPrac.mergeSortedArrays();
         System.out.println(arraysPrac.subsetArray());
+        arraysPrac.mergeArrayWithoutExtraSpace();
+        arraysPrac.pairsForSum();
+        arraysPrac.unionOfArray();
+        arraysPrac.negativeAheadPositive();
     }
 }
