@@ -15,5 +15,8 @@ public class Main {
         arraysPrac.pairsForSum();
         arraysPrac.unionOfArray();
         arraysPrac.negativeAheadPositive();
+        System.out.println(arraysPrac.fibonacci(8));
+        System.out.println(arraysPrac.fibonacciRec(8));
+
     }
 }

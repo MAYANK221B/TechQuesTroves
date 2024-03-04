@@ -268,5 +268,31 @@ public class ArraysPrac {
         System.out.println();
     }
 
+    /**
+     *Calculating fibonacci number with iterative approach
+     */
+    public int fibonacci(int n){
+    if(n==0)
+        return 0;
+    if(n==1)
+        return 1;
+    int a =0;
+    int b =1;
+    int c =1;
+    for(int i=2;i<=n;i++){
+        c=a+b;
+        a=b;
+        b=c;
+    }
+    return c;
+}
 
+    /**
+     *Calculating fibonacci number with recursive approach
+     */
+    public int fibonacciRec(int n){
+        if(n<=1)
+            return n;
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
     }
