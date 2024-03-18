@@ -17,8 +17,8 @@ public class Main {
         arraysPrac.negativeAheadPositive();
         System.out.println(arraysPrac.fibonacci(8));
         System.out.println(arraysPrac.fibonacciRec(8));
-       // ThreadImpl thread1 = new ThreadImpl();
-       // thread1.demo();
+        ThreadImpl thread1 = new ThreadImpl();
+         thread1.demo();
         ThreadImpl2 thread2 = new ThreadImpl2();
         thread2.demo();
     }
