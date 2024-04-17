@@ -1,3 +1,5 @@
+package multithreading;
+
 /**
  * Implementing threading using Thread class
  */
