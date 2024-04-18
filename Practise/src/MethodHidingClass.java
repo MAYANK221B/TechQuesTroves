@@ -9,6 +9,8 @@ class Parent{
 }
 
 class Child extends Parent{
+    //if we try to add @Override, it gives compile time error, so we can use same signature to hide the parent method,
+    // known as method hiding.
     public static void className(){
         System.out.println("Child Class");
     }
@@ -21,7 +23,8 @@ public class MethodHidingClass {
         Parent parent = new Child();
         Child child = new Child();
 
-        //though technically wrong but just to showcase
+        //though technically wrong but just to showcase, technically wrong because static method should be directly call with
+        //rather than through a instance of that class.
        parent.className();
        child.className();
     }
