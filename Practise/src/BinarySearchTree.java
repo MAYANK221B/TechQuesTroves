@@ -144,7 +144,7 @@ private void printInorderRecursive(TreeNode node) {
     return minValue(this.root);
     }
 
-//--------------------------------------------MIN VALUE-----------------------------------------------------------------
+//--------------------------------------------MAX VALUE-----------------------------------------------------------------
 private int maxValue(TreeNode node){
     if(node==null)
         return 0;
@@ -154,7 +154,7 @@ private int maxValue(TreeNode node){
     }
     return temp.value;
 }
-    //Helper Method to find minimum value in BST
+    //Helper Method to find maximum value in BST
     private int findMaxValue(){
         return maxValue(this.root);
     }
