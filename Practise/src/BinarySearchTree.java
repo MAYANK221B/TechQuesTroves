@@ -129,7 +129,7 @@ private void printInorderRecursive(TreeNode node) {
         return lookup(this.root, val);
     }
 //--------------------------------------------MIN VALUE-----------------------------------------------------------------
-
+    //The left most value will bethe minimum value in the Binary Search Tree
     private int minValue(TreeNode node){
     if(node==null)
         return 0;
@@ -145,7 +145,8 @@ private void printInorderRecursive(TreeNode node) {
     }
 
 //--------------------------------------------MAX VALUE-----------------------------------------------------------------
-private int maxValue(TreeNode node){
+    //The right most value will be the maximum value in the Binary Search Tree
+    private int maxValue(TreeNode node){
     if(node==null)
         return 0;
     TreeNode temp =  node;
@@ -173,7 +174,29 @@ private int maxValue(TreeNode node){
     System.out.println();
 
     }
+//--------------------------------------------DELETING node -----------------------------------------------------------------
+    private TreeNode deleteNodeRecursive(TreeNode root, int key){
+        if(root == null)
+            return root;
 
+        if(key<root.value)
+            root.left = deleteNodeRecursive(root.left, key);
+        else if (key> root.value)
+            root.right =deleteNodeRecursive(root.right, key);
+        else {
+            if(root.left == null)
+                return root.right;
+            else if (root.right == null)
+                return root.left;
+            root.value = minValue(root.right);
+            root.right = deleteNodeRecursive(root.right, root.value);
+        }
+        return root;
+    }
+    //Helper method to delete node in BST
+    private TreeNode deleteNode(int key){
+    return deleteNodeRecursive(this.root, key);
+    }
 //--------------------------------------------MAIN----------------------------------------------------------------------
     public static void main(String[] args){
     //BinarySearchTree bst = new BinarySearchTree();
@@ -221,5 +244,7 @@ private int maxValue(TreeNode node){
     System.out.print("Printing BST in ascending order: ");
     bst2.printInorder();
 
+    System.out.println("Deleting Node Value " + 40 + " in BST");
+    bst2.deleteNode(40);
 }
 }
