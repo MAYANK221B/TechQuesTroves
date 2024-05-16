@@ -197,6 +197,21 @@ private void printInorderRecursive(TreeNode node) {
     private TreeNode deleteNode(int key){
     return deleteNodeRecursive(this.root, key);
     }
+
+//--------------------------------------------Height of BST----------------------------------------------------------------------
+private int maxHeight(TreeNode node ){
+    if(node==null)
+        return 0;
+    else {
+        int leftHeight = maxHeight(node.left);
+        int rightHeight = maxHeight(node.right);
+
+        if  (leftHeight>rightHeight)
+                return leftHeight + 1;
+        else
+            return rightHeight + 1;
+    }
+}
 //--------------------------------------------MAIN----------------------------------------------------------------------
     public static void main(String[] args){
     //BinarySearchTree bst = new BinarySearchTree();
@@ -246,5 +261,7 @@ private void printInorderRecursive(TreeNode node) {
 
     System.out.println("Deleting Node Value " + 40 + " in BST");
     bst2.deleteNode(40);
+
+    System.out.println("Height of BST is " + bst2.maxHeight(bst2.root));
 }
 }

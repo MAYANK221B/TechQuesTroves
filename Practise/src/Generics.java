@@ -43,10 +43,5 @@ public class Generics {
         stringList.add("Dark Knight");
         stringList.add("Dark Knight Rises");
         genericMethod.unknownList(stringList);
-
-
     }
-
-
-
 }
