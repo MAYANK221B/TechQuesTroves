@@ -95,7 +95,7 @@ public class SinglyLinkedList {
         return list;
     }
 
-    public void display(SinglyLinkedList list){
+    private void display(SinglyLinkedList list){
         Node node = list.head;
         while(node!=null){
             System.out.print(node.data + " ");
@@ -107,7 +107,7 @@ public class SinglyLinkedList {
     /***
      *Method to reverse a linked list
      */
-    public SinglyLinkedList reverse(SinglyLinkedList list) {
+    private SinglyLinkedList reverse(SinglyLinkedList list) {
         Node curr = list.head;
         Node prev = null;
         Node next = curr.next;
@@ -120,6 +120,27 @@ public class SinglyLinkedList {
         }
         head = prev;
         return list;
+    }
+
+    private void createLoop(SinglyLinkedList list){
+        Node temp = list.head;
+        while(temp.next!=null){
+            temp = temp.next;
+        }
+        //Creating a link between last and third element
+        temp.next = head.next.next;
+    }
+
+    private boolean detectLoop(SinglyLinkedList list){
+        Node slow = list.head;
+        Node fast = list.head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast)
+                return true;
+        }
+        return false;
     }
 
     public static void main(String[] args){
@@ -143,5 +164,9 @@ public class SinglyLinkedList {
         list.display(list);
         list = list.deleteAtPosition(list,1);
         list.display(list);
+        //list.createLoop(list);
+        //Infinite printing due to loop
+        //list.display(list);
+        System.out.println("loop detected:" + list.detectLoop(list));
     }
 }
