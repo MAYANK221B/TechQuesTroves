@@ -1,4 +1,6 @@
-
+/**
+ * Class with all basic Singly linked list operations.
+ */
 public class SinglyLinkedList {
     Node head;
     static class Node{
